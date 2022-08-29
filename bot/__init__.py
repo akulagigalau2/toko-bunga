@@ -309,6 +309,22 @@ try:
 except:
     VIEW_LINK = False
 try:
+    DUMP_CHAT_ID = getConfig('DUMP_CHAT_ID')
+    if len(DUMP_CHAT_ID) == 0:
+        raise KeyError
+    else:
+        DUMP_CHAT_ID = int(DUMP_CHAT_ID)
+except KeyError:
+    DUMP_CHAT_ID = None
+try:
+    dumps = getConfig('AUTO_DUMP_CHAT')
+    dumps = dumps.split(" ")
+    for chats in dumps:
+        AUTO_DUMP_CHAT.add(int(chats))
+except:
+    log_error('Dump chats not provideder')
+    pass
+try:
     IS_TEAM_DRIVE = getConfig('IS_TEAM_DRIVE')
     IS_TEAM_DRIVE = IS_TEAM_DRIVE.lower() == 'true'
 except:
