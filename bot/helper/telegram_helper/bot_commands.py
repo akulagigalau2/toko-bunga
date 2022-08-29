@@ -33,7 +33,7 @@ class _BotCommands:
         self.UnAuthorizeCommand = f'unauthorize{CMD_INDEX}'
         self.AddSudoCommand = f'addsudo{CMD_INDEX}'
         self.RmSudoCommand = f'rmsudo{CMD_INDEX}'
-        self.PingCommand = f'ping{CMD_INDEX}'
+        self.PingCommand = f'ping1{CMD_INDEX}'
         self.RestartCommand = f'restart{CMD_INDEX}'
         self.StatsCommand = f'stats{CMD_INDEX}'
         self.HelpCommand = f'help{CMD_INDEX}'
