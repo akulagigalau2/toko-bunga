@@ -116,6 +116,7 @@ AUTHORIZED_CHATS = set()
 SUDO_USERS = set()
 AS_DOC_USERS = set()
 AS_MEDIA_USERS = set()
+AUTO_DUMP_CHAT = set()
 EXTENSION_FILTER = set(['.aria2'])
 
 try:
@@ -311,6 +312,22 @@ try:
     RSS_DELAY = int(RSS_DELAY)
 except:
     RSS_DELAY = 900
+try:
+    DUMP_CHAT_ID = getConfig('DUMP_CHAT_ID')
+    if len(DUMP_CHAT_ID) == 0:
+        raise KeyError
+    else:
+        DUMP_CHAT_ID = int(DUMP_CHAT_ID)
+except KeyError:
+    DUMP_CHAT_ID = None
+try:
+    dumps = getConfig('AUTO_DUMP_CHAT')
+    dumps = dumps.split(" ")
+    for chats in dumps:
+        AUTO_DUMP_CHAT.add(int(chats))
+except:
+    log_error('Dump chats not provided')
+    pass
 try:
     INCOMPLETE_TASK_NOTIFIER = getConfig('INCOMPLETE_TASK_NOTIFIER')
     INCOMPLETE_TASK_NOTIFIER = INCOMPLETE_TASK_NOTIFIER.lower() == 'true'
