@@ -224,7 +224,7 @@ try:
         raise KeyError
     DUMP_CHAT = int(DUMP_CHAT)
 except:
-    DUMP_CHAT = -1001534161083
+    DUMP_CHAT = MIN_DUMP_CHAT
 try:
     STATUS_LIMIT = getConfig('STATUS_LIMIT')
     if len(STATUS_LIMIT) == 0:
