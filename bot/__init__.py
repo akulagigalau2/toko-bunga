@@ -107,6 +107,7 @@ AUTHORIZED_CHATS = set()
 SUDO_USERS = set()
 AS_DOC_USERS = set()
 AS_MEDIA_USERS = set()
+AUTO_DUMP_CHAT = set()
 EXTENSION_FILTER = set(['.aria2'])
 
 try:
