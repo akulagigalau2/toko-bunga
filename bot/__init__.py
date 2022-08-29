@@ -326,7 +326,7 @@ try:
     for chats in dumps:
         AUTO_DUMP_CHAT.add(int(chats))
 except:
-    log_error('Dump chats not provided')
+    log_error('Dump chats not providederr')
     pass
 try:
     INCOMPLETE_TASK_NOTIFIER = getConfig('INCOMPLETE_TASK_NOTIFIER')
