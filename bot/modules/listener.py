@@ -296,9 +296,6 @@ class MirrorLeechListener:
         sendDump(DUMP_CHAT_ID, msg, self.bot, self.message,
                      InlineKeyboardMarkup(buttons.build_menu(2)))
 
-        if not self.isPrivate and INCOMPLETE_TASK_NOTIFIER and DB_URI is not None:
-            DbManger().rm_complete_task(self.message.link)
-
     def onUploadError(self, error):
         e_str = error.replace('<', '').replace('>', '')
         clean_download(self.dir)
